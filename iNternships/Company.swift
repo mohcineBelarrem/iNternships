@@ -76,9 +76,22 @@ class Company {
         
     }
     
+    ///Returns all the inforamtions about a company to make it easy for the Search Engine to look for informations inside companies data.
     func description () -> String {
         
-        return self.name
+        return  name + " " +
+                location + " " +
+                size + " " +
+                goal + " " +
+                soughtProfile + " " +
+                applicationMethod + " " +
+                contactName + " " +
+                contactMail + " " +
+                contactNumber + " " +
+                publicationDate + " " +
+                startDate + " " +
+                salary + " " +
+                comments
     }
     
 }

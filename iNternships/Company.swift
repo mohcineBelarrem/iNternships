@@ -54,25 +54,25 @@ class Company {
      */
     init(company : NSDictionary) {
         
-        self.id = company["id"] as! Int;
+        self.id = company["id"] as! Int
         
-        self.name = company["name"] as! String;
-        self.location = company["location"] as! String;
-        self.size = company["size"] as! String;
+        self.name = company["name"] as! String
+        self.location = company["location"] as! String
+        self.size = company["size"] as! String
         
-        self.goal = company["goal"] as! String;
-        self.soughtProfile = company["sought_profile"] as! String;
-        self.applicationMethod = company["application_method"] as! String;
+        self.goal = company["goal"] as! String
+        self.soughtProfile = company["sought_profile"] as! String
+        self.applicationMethod = company["application_method"] as! String
         
-        self.contactName = company["contact_name"] as! String;
-        self.contactMail = company["contact_mail"] as! String;
-        self.contactNumber = company["contact_number"] as! String;
+        self.contactName = company["contact_name"] as! String
+        self.contactMail = company["contact_mail"] as! String
+        self.contactNumber = company["contact_number"] as! String
         
-        self.publicationDate = company["publication_date"] as! String;
-        self.startDate = company["start_date"] as! String;
-        self.salary = company["salary"] as! String;
+        self.publicationDate = company["publication_date"] as! String
+        self.startDate = company["start_date"] as! String
+        self.salary = company["salary"] as! String
         
-        self.comments = company["comments"] as! String;
+        self.comments = company["comments"] as! String
         
     }
     

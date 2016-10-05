@@ -43,7 +43,6 @@ class CompaniesRetriever {
                                         "salary":"1000000",
                                         "comments":""]
         
-        
         let company2 : NSDictionary =  ["id":2,
                                         "name":"company 2",
                                         "location":"New york city ",
@@ -58,7 +57,6 @@ class CompaniesRetriever {
                                         "start_date":"01/01/2017",
                                         "salary":"1000000",
                                         "comments":""]
-        
         
         let company3 : NSDictionary =  ["id":3,
                                         "name":"company 3",
@@ -78,7 +76,6 @@ class CompaniesRetriever {
         self.directory.companiesList.append(Company(company: company1))
         self.directory.companiesList.append(Company(company: company2))
         self.directory.companiesList.append(Company(company: company3))
-        
         
     }
     

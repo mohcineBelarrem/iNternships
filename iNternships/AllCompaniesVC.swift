@@ -8,30 +8,88 @@
 
 import UIKit
 
-class AllCompaniesVC: UIViewController {
+///The Class that lists the companies loaded from server, and has a search Engine
+class AllCompaniesVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UISearchResultsUpdating {
 
     @IBOutlet var tableView: UITableView!
     
+    var companiesList : [Company]!
+    var filtredCompaniesList : [Company]!
+    
+    var resultSearchController = UISearchController()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        self.companiesList = CompaniesRetriever.sharedInstance.getCompaniesList()
+        self.filtredCompaniesList = []
+        
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        
+        self.resultSearchController = UISearchController(searchResultsController: nil)
+        self.resultSearchController.searchResultsUpdater = self
+        self.resultSearchController.dimsBackgroundDuringPresentation = false
+        self.resultSearchController.searchBar.sizeToFit()
+        
+        
+        self.tableView.tableHeaderView = self.resultSearchController.searchBar
+        
+        self.tableView.reloadData()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
-    */
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if self.resultSearchController.active {
+            return self.filtredCompaniesList.count
+        } else {
+            return self.companiesList.count
+        }
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("companyCell")
+        
+        if self.resultSearchController.active {
+            cell!.textLabel!.text = self.filtredCompaniesList[indexPath.row].name
+        } else {
+            cell!.textLabel!.text = self.companiesList[indexPath.row].name
+        }
+        return cell!
+    }
+    
+    
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        
+        self.filtredCompaniesList.removeAll(keepCapacity: false)
+        
+        self.filtredCompaniesList = self.companiesList.filter(
+            
+            //closure header (params) -+ (return type) in
+            
+            { (ComparedCompany : Company) -> Bool in
+                
+                //closure body
+                let query = searchController.searchBar.text
+                
+                //closure return
+                let resultRange = ComparedCompany.description().rangeOfString(query!, options: NSStringCompareOptions.CaseInsensitiveSearch)
+                
+                return  resultRange != nil
+                
+        })
+        
+        self.tableView.reloadData()
+    }
+
+    
 
 }

@@ -15,7 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //Loading data as the application loads to gain speed when we want to list the companies.
+        CompaniesRetriever.sharedInstance.loadCompaniesData()
+        
         return true
     }
 

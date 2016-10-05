@@ -12,7 +12,7 @@ import Foundation
 /// Basicly a class that will store a list of Companies
 class CompaniesDirectory {
     
-    var directory : [Company]
+    var companiesList : [Company]
     
     
     /**
@@ -21,7 +21,7 @@ class CompaniesDirectory {
         -Returns: A brand new Companies directory :)
      */
     init(){
-            self.directory = []
+            self.companiesList = []
     }
     
 }

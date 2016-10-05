@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gJZ-MH-UVx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iNternships" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home" id="BYZ-38-t0r" customClass="ViewController" customModule="iNternships" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +17,127 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ytb-8d-3Vc">
+                                <rect key="frame" x="20" y="540" width="150" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Otp-mY-W36"/>
+                                    <constraint firstAttribute="height" constant="40" id="iRA-g6-fC9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="New Company">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addNewCompany:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Az5-Eh-yfk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b53-dv-Teo">
+                                <rect key="frame" x="430" y="540" width="150" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="CFq-Zr-WHQ"/>
+                                    <constraint firstAttribute="width" constant="150" id="gog-MO-q6n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="All Companies">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showAllCompanies:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dcS-62-BXK"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="7WY-Km-7Sd">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="e06-mN-iyL"/>
+                                    <constraint firstAttribute="width" constant="300" id="swd-7Z-9mD"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="b53-dv-Teo" secondAttribute="bottom" constant="20" id="IDS-H7-cEh"/>
+                            <constraint firstItem="b53-dv-Teo" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="KVF-xp-sac"/>
+                            <constraint firstItem="7WY-Km-7Sd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tv0-s0-NZg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ytb-8d-3Vc" secondAttribute="bottom" constant="20" id="m6q-D8-hp2"/>
+                            <constraint firstItem="7WY-Km-7Sd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nXA-wf-5DU"/>
+                            <constraint firstItem="ytb-8d-3Vc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="nXc-EN-q3H"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Home" id="EGY-XL-33D"/>
+                    <connections>
+                        <segue destination="opJ-M4-hvH" kind="show" identifier="showAllCompaniesScene" id="M7r-N1-kDT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1377" y="464"/>
+        </scene>
+        <!--All Companies-->
+        <scene sceneID="IpN-6T-GZz">
+            <objects>
+                <viewController title="All Companies" id="opJ-M4-hvH" customClass="AllCompaniesVC" customModule="iNternships" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jwa-HH-1eM"/>
+                        <viewControllerLayoutGuide type="bottom" id="v99-MU-C6Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DKo-GV-k98">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kse-ig-xdL">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Kse-ig-xdL" firstAttribute="leading" secondItem="DKo-GV-k98" secondAttribute="leadingMargin" constant="-20" id="JqZ-Ki-eHj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kse-ig-xdL" secondAttribute="trailing" constant="-20" id="QNA-Ca-532"/>
+                            <constraint firstItem="Kse-ig-xdL" firstAttribute="top" secondItem="DKo-GV-k98" secondAttribute="topMargin" id="sPQ-FW-Sqj"/>
+                            <constraint firstItem="v99-MU-C6Q" firstAttribute="top" secondItem="Kse-ig-xdL" secondAttribute="bottom" id="xuf-6Q-9Be"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Kse-ig-xdL" id="SEl-0e-uHm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p17-LK-rwD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2094" y="464"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="I2t-Os-dmm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gJZ-MH-UVx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mo7-Vf-9CP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7yo-Fj-9Ux"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QbQ-c1-hh2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="616" y="464"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="300" height="300"/>
+    </resources>
 </document>

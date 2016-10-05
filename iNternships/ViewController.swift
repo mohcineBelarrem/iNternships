@@ -23,7 +23,16 @@ class ViewController: UIViewController {
 
     //Hello World
     
+
+    @IBAction func showAllCompanies(sender: AnyObject) {
+        
+       performSegueWithIdentifier("showAllCompaniesScene", sender: self)
+    }
     
+    @IBAction func addNewCompany(sender: AnyObject) {
+        
+        NSLog("Add new company")
+    }
     
 }
 

@@ -16,7 +16,21 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="qp9-Oq-nWo">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="ZbK-3n-E0v"/>
+                                    <constraint firstAttribute="height" constant="300" id="lR3-1b-qeU"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qp9-Oq-nWo" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="P8g-Bn-UOb"/>
+                            <constraint firstItem="qp9-Oq-nWo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="aCq-wc-9dX"/>
+                            <constraint firstItem="qp9-Oq-nWo" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="vee-Zl-Q02"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +38,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="300" height="300"/>
+    </resources>
 </document>

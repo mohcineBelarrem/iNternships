@@ -122,11 +122,55 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="Kse-ig-xdL" id="SEl-0e-uHm"/>
+                        <segue destination="NHy-jT-VaT" kind="show" identifier="showCompanyDetail" id="jEe-2g-pJF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p17-LK-rwD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1158" y="-176"/>
+        </scene>
+        <!--Companies Detail-->
+        <scene sceneID="48j-I2-pho">
+            <objects>
+                <tableViewController title="Companies Detail" id="NHy-jT-VaT" customClass="CompaniesDetailVC" customModule="iNternships" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="299" sectionHeaderHeight="28" sectionFooterHeight="28" id="1jV-ja-1nU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="companyDetailCell" rowHeight="299" id="YYG-zK-Fr9">
+                                <rect key="frame" x="0.0" y="92" width="600" height="299"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YYG-zK-Fr9" id="fbb-cB-oGx">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="298"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="101" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ypw-Ca-mUv">
+                                            <rect key="frame" x="8" y="8" width="584" height="282"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ypw-Ca-mUv" firstAttribute="leading" secondItem="fbb-cB-oGx" secondAttribute="leadingMargin" id="FBj-6G-6aP"/>
+                                        <constraint firstItem="ypw-Ca-mUv" firstAttribute="trailing" secondItem="fbb-cB-oGx" secondAttribute="trailingMargin" id="Rgd-Vn-Zjb"/>
+                                        <constraint firstItem="ypw-Ca-mUv" firstAttribute="top" secondItem="fbb-cB-oGx" secondAttribute="topMargin" id="inr-Za-Y5t"/>
+                                        <constraint firstItem="ypw-Ca-mUv" firstAttribute="bottom" secondItem="fbb-cB-oGx" secondAttribute="bottomMargin" id="jXa-bW-1Xs"/>
+                                        <constraint firstItem="ypw-Ca-mUv" firstAttribute="top" secondItem="fbb-cB-oGx" secondAttribute="topMargin" id="nlY-73-3bk"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NHy-jT-VaT" id="TrC-78-89l"/>
+                            <outlet property="delegate" destination="NHy-jT-VaT" id="FZO-zb-rhH"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k29-Nu-BgI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1886" y="-175"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="I2t-Os-dmm">

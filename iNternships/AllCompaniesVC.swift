@@ -16,6 +16,8 @@ class AllCompaniesVC: UIViewController,UITableViewDataSource,UITableViewDelegate
     var companiesList : [Company]!
     var filtredCompaniesList : [Company]!
     
+    var companyToBeDetailled : Company!
+    
     var resultSearchController = UISearchController()
     
     
@@ -89,7 +91,31 @@ class AllCompaniesVC: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         self.tableView.reloadData()
     }
-
     
-
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if self.resultSearchController.active {
+            self.companyToBeDetailled = self.filtredCompaniesList[indexPath.row]
+        } else {
+             self.companyToBeDetailled = self.companiesList[indexPath.row]
+        }
+        
+        self.resultSearchController.active = false
+        
+        performSegueWithIdentifier("showCompanyDetail", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        
+        if segue.identifier == "showCompanyDetail" {
+            
+            let cdvc = segue.destinationViewController as! CompaniesDetailVC
+            cdvc.companyToDetail = self.companyToBeDetailled
+        }
+        
+    }
+    
+    
 }

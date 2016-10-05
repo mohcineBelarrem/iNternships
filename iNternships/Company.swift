@@ -94,6 +94,26 @@ class Company {
                 comments
     }
     
+    
+    func humanFriendlyDescription () -> String {
+        
+        return  "name : " + name + "\n" +
+                "location : " + location + "\n" +
+                "size: " + size + "\n" +
+                "goal: " + goal + "\n" +
+                "soughtProfile: " + soughtProfile + "\n" +
+                "applicationMethod: " + applicationMethod + "\n" +
+                "contactName: " + contactName + "\n" +
+                "contactMail: " + contactMail + "\n" +
+                "contactNumber: " + contactNumber + "\n" +
+                "publicationDate: " + publicationDate + "\n" +
+                "startDate: " + startDate + "\n" +
+                "salary: " + salary + "\n" +
+                "comments: " + comments
+    }
+    
+    
+    
 }
 
 

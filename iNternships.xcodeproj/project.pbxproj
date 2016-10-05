@@ -96,6 +96,7 @@
 				TargetAttributes = {
 					4B8DF3FF1DA47C94006CC4E8 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = N9362VAWBT;
 					};
 				};
 			};
@@ -249,7 +250,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = iNternships/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.belarrem.mohcine.iNternships;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -260,7 +263,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = iNternships/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.belarrem.mohcine.iNternships;
 				PRODUCT_NAME = "$(TARGET_NAME)";

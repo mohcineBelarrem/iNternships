@@ -17,6 +17,8 @@
 		4B8DF41E1DA5047E006CC4E8 /* CompaniesRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8DF41D1DA5047E006CC4E8 /* CompaniesRetriever.swift */; };
 		4B8DF4201DA50A45006CC4E8 /* AllCompaniesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8DF41F1DA50A45006CC4E8 /* AllCompaniesVC.swift */; };
 		4B8DF4221DA53801006CC4E8 /* CompaniesDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8DF4211DA53801006CC4E8 /* CompaniesDetailVC.swift */; };
+		4B8DF4241DA576D1006CC4E8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8DF4231DA576D1006CC4E8 /* Default-568h@2x.png */; };
+		4BC240BE1DA638BF00C6263A /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BC240BD1DA638BF00C6263A /* test.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		4B8DF41D1DA5047E006CC4E8 /* CompaniesRetriever.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompaniesRetriever.swift; sourceTree = "<group>"; };
 		4B8DF41F1DA50A45006CC4E8 /* AllCompaniesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllCompaniesVC.swift; sourceTree = "<group>"; };
 		4B8DF4211DA53801006CC4E8 /* CompaniesDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompaniesDetailVC.swift; sourceTree = "<group>"; };
+		4B8DF4231DA576D1006CC4E8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4BC240BD1DA638BF00C6263A /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +52,7 @@
 		4B8DF3F71DA47C94006CC4E8 = {
 			isa = PBXGroup;
 			children = (
+				4B8DF4231DA576D1006CC4E8 /* Default-568h@2x.png */,
 				4B8DF4021DA47C94006CC4E8 /* iNternships */,
 				4B8DF4011DA47C94006CC4E8 /* Products */,
 			);
@@ -80,6 +85,7 @@
 			children = (
 				4B8DF4151DA4EE0B006CC4E8 /* Company.swift */,
 				4B8DF4181DA4FB33006CC4E8 /* CompaniesDirectory.swift */,
+				4BC240BD1DA638BF00C6263A /* test.json */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -155,6 +161,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B8DF40E1DA47C94006CC4E8 /* LaunchScreen.storyboard in Resources */,
+				4B8DF4241DA576D1006CC4E8 /* Default-568h@2x.png in Resources */,
+				4BC240BE1DA638BF00C6263A /* test.json in Resources */,
 				4B8DF40B1DA47C94006CC4E8 /* Assets.xcassets in Resources */,
 				4B8DF4091DA47C94006CC4E8 /* Main.storyboard in Resources */,
 			);
@@ -287,11 +295,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iNternships/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.belarrem.mohcine.iNternships;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -300,11 +310,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iNternships/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.belarrem.mohcine.iNternships;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

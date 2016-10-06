@@ -24,6 +24,8 @@ class AllCompaniesVC: UIViewController,UITableViewDataSource,UITableViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        CompaniesRetriever.sharedInstance.loadCompaniesData()
+        
         self.companiesList = CompaniesRetriever.sharedInstance.getCompaniesList()
         self.filtredCompaniesList = []
         

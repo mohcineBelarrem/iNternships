@@ -19,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ytb-8d-3Vc">
-                                <rect key="frame" x="20" y="540" width="150" height="40"/>
+                                <rect key="frame" x="20" y="540" width="125" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="Otp-mY-W36"/>
+                                    <constraint firstAttribute="width" constant="125" id="Otp-mY-W36"/>
                                     <constraint firstAttribute="height" constant="40" id="iRA-g6-fC9"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <state key="normal" title="New Company">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -39,13 +39,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b53-dv-Teo">
-                                <rect key="frame" x="430" y="540" width="150" height="40"/>
+                                <rect key="frame" x="455" y="540" width="125" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="CFq-Zr-WHQ"/>
-                                    <constraint firstAttribute="width" constant="150" id="gog-MO-q6n"/>
+                                    <constraint firstAttribute="width" constant="125" id="gog-MO-q6n"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <state key="normal" title="All Companies">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>

@@ -1,0 +1,20 @@
+{
+    "companies":[
+                 {
+                 "id":"2",
+                 "name":"company 1",
+                 "location":"New york city, NY",
+                 "size":"500 employees",
+                 "goal":"to create the nex tinder",
+                 "sought_profile":"to find the next zuckerberg",
+                 "application_method":"linkedin",
+                 "contact_name":"sergei hamid",
+                 "contact_mail":"shamid@hotmail.com",
+                 "contact_number":"001-0032-12121",
+                 "publication_date":"19-09-2013",
+                 "start_date":"19-09-2013",
+                 "salary":"1000 dollars",
+                 "comments":"Nassing"
+                 }
+                 ]
+}

@@ -23,10 +23,6 @@ class CompaniesRetriever {
         self.directory = CompaniesDirectory()
     }
     
-    
-    
-
-    
     ///Method responsible for loading JSON data, parsing it and loading it in the directory variable
     func loadCompaniesData() {
        
@@ -47,23 +43,64 @@ class CompaniesRetriever {
                         self.directory.companiesList.append(Company(company: company))
                     }
                 }
-        
             else {
-                
                 UIAlertView(title: "Error", message: "Wrong Password, ReLaunch the app and try again", delegate: nil, cancelButtonTitle: "Ok").show()
             }
-            
         } catch {
             print("error serializing JSON: \(error)")
         }
 
-        
-    }
-    
+            }
     ///Accessor to get the list of companies downloaded from the server
     func getCompaniesList () -> [Company] {
         
         return self.directory.companiesList
+    }
+    
+    func createNewCompany(params:String){
+        
+        // Do any additional setup after loading the view.
+        
+        let myUrl = NSURL(string: "http://testarea.belarrem.com/newcompany.php?password=\(password)");
+        
+        let request = NSMutableURLRequest(URL:myUrl!)
+        
+        request.HTTPMethod = "POST"// Compose a query string
+        
+        let postString = params;
+        
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data: NSData?, response: NSURLResponse?, error: NSError?) in
+            
+            if error != nil
+            {
+                print("error=\(error)")
+                return
+            }
+            
+            // You can print out response object
+            print("response = \(response)")
+            
+            //Let's convert response sent from a server side script to a NSDictionary object:
+            do {
+                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
+                
+                if let parseJSON = json {
+                    
+                    // Now we can access value of First Name by its key
+                    let message = parseJSON["message"] as? String
+                    print("message: \(message)")
+                    
+                    
+                    
+                    
+                }
+            } catch {
+                print(error)
+            }
+        }
+        task.resume()
     }
     
 }

@@ -89,7 +89,7 @@
         <!--New Company-->
         <scene sceneID="6tO-gC-Pt0">
             <objects>
-                <viewController title="New Company" id="4ZJ-PG-bHT" sceneMemberID="viewController">
+                <viewController title="New Company" id="4ZJ-PG-bHT" customClass="NewCompanyVC" customModule="iNternships" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1XN-4n-J1j"/>
                         <viewControllerLayoutGuide type="bottom" id="Abb-eR-yty"/>

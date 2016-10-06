@@ -19,6 +19,7 @@
 		4B8DF4221DA53801006CC4E8 /* CompaniesDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8DF4211DA53801006CC4E8 /* CompaniesDetailVC.swift */; };
 		4B8DF4241DA576D1006CC4E8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8DF4231DA576D1006CC4E8 /* Default-568h@2x.png */; };
 		4BC240BE1DA638BF00C6263A /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BC240BD1DA638BF00C6263A /* test.json */; };
+		4BC240C01DA6D4CF00C6263A /* NewCompanyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC240BF1DA6D4CF00C6263A /* NewCompanyVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		4B8DF4211DA53801006CC4E8 /* CompaniesDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompaniesDetailVC.swift; sourceTree = "<group>"; };
 		4B8DF4231DA576D1006CC4E8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4BC240BD1DA638BF00C6263A /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
+		4BC240BF1DA6D4CF00C6263A /* NewCompanyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewCompanyVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				4B8DF41D1DA5047E006CC4E8 /* CompaniesRetriever.swift */,
 				4B8DF41F1DA50A45006CC4E8 /* AllCompaniesVC.swift */,
 				4B8DF4211DA53801006CC4E8 /* CompaniesDetailVC.swift */,
+				4BC240BF1DA6D4CF00C6263A /* NewCompanyVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				4B8DF4161DA4EE0B006CC4E8 /* Company.swift in Sources */,
 				4B8DF4201DA50A45006CC4E8 /* AllCompaniesVC.swift in Sources */,
 				4B8DF4191DA4FB33006CC4E8 /* CompaniesDirectory.swift in Sources */,
+				4BC240C01DA6D4CF00C6263A /* NewCompanyVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

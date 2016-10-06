@@ -79,11 +79,30 @@
                     <navigationItem key="navigationItem" title="Home" id="EGY-XL-33D"/>
                     <connections>
                         <segue destination="opJ-M4-hvH" kind="show" identifier="showAllCompaniesScene" id="M7r-N1-kDT"/>
+                        <segue destination="4ZJ-PG-bHT" kind="show" identifier="showNewCompanyScene" id="ZFg-7W-kws"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="441" y="-176"/>
+        </scene>
+        <!--New Company-->
+        <scene sceneID="6tO-gC-Pt0">
+            <objects>
+                <viewController title="New Company" id="4ZJ-PG-bHT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1XN-4n-J1j"/>
+                        <viewControllerLayoutGuide type="bottom" id="Abb-eR-yty"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5ax-md-WZN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UvN-30-yh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="441" y="521"/>
         </scene>
         <!--All Companies-->
         <scene sceneID="IpN-6T-GZz">

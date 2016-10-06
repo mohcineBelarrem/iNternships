@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     
     @IBAction func addNewCompany(sender: AnyObject) {
         
-        NSLog("Add new company")
+        performSegueWithIdentifier("showNewCompanyScene", sender: self)
     }
     
 }

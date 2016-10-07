@@ -11,41 +11,51 @@ import UIKit
 class CompaniesDetailVC: UITableViewController {
     
     var companyToDetail : Company!
+    var sectionsHeaders : [String]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
        self.navigationItem.title = self.companyToDetail.name
+       self.sectionsHeaders = CompaniesRetriever.sharedInstance.getHumanReadableCompanyComponents()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        return self.sectionsHeaders.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 1
-        
     }
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 450.0
+        if indexPath.section == 3 || indexPath.section == 4 || indexPath.section == 12 {
+            return 100.0
+        } else {
+            return 44.0
+        }
     }
     
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.sectionsHeaders[section]
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("companyDetailCell", forIndexPath: indexPath)
-
-        let textView = cell.viewWithTag(101) as! UITextView
-        textView.text = self.companyToDetail.humanFriendlyDescription()
+     
+        var cell : UITableViewCell
+        
+        if indexPath.section == 3 || indexPath.section == 4 || indexPath.section == 12 {
+            
+          cell = tableView.dequeueReusableCellWithIdentifier("companyDetailLargeCell", forIndexPath: indexPath)
+          let textView =  cell.viewWithTag(101) as! UITextView
+           textView.text = self.companyToDetail.toArray()[indexPath.section]
+            
+        } else {
+            
+            cell = tableView.dequeueReusableCellWithIdentifier("companyDetailSmallCell", forIndexPath: indexPath)
+            let label = cell.viewWithTag(102) as! UILabel
+            label.text = self.companyToDetail.toArray()[indexPath.section]
+        }
         
         return cell
     }

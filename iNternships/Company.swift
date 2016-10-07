@@ -96,6 +96,24 @@ class Company {
     }
     
     
+    func toArray() -> [String] {
+        
+        return [name,
+                location,
+                size,
+                goal,
+                soughtProfile,
+                applicationMethod,
+                contactName,
+                contactMail,
+                contactNumber,
+                publicationDate,
+                startDate,
+                salary,
+                comments]
+        
+    }
+    
     func humanFriendlyDescription () -> String {
         
         return  "name : " + name + "\n" +

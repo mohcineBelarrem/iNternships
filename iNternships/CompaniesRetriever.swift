@@ -19,7 +19,7 @@ class CompaniesRetriever {
     private var directory : CompaniesDirectory
     
     private init() {
-        NSLog("Contacting Server...")
+        //NSLog("Contacting Server...")
         self.directory = CompaniesDirectory()
     }
     
@@ -101,9 +101,6 @@ class CompaniesRetriever {
                     // Now we can access value of First Name by its key
                     let message = parseJSON["message"] as? String
                     print("message: \(message)")
-                    
-                    
-                    
                     
                 }
             } catch {

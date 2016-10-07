@@ -97,8 +97,58 @@
                     <view key="view" contentMode="scaleToFill" id="5ax-md-WZN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="rrK-0y-XD3">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="aW2-nQ-q2B">
+                                        <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aW2-nQ-q2B" id="3oS-Aa-30d">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTP-Zp-Rzo">
+                                                    <rect key="frame" x="8" y="11" width="50" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="biY-ka-mX8"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type the name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vSv-r2-cU3">
+                                                    <rect key="frame" x="66" y="6" width="526" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rTP-Zp-Rzo" firstAttribute="top" secondItem="3oS-Aa-30d" secondAttribute="topMargin" constant="3" id="B4O-AS-xbw"/>
+                                                <constraint firstItem="vSv-r2-cU3" firstAttribute="top" secondItem="3oS-Aa-30d" secondAttribute="topMargin" constant="-2" id="FvF-9n-nUn"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="vSv-r2-cU3" secondAttribute="bottom" constant="-1" id="Sf7-MO-z9n"/>
+                                                <constraint firstItem="rTP-Zp-Rzo" firstAttribute="leading" secondItem="3oS-Aa-30d" secondAttribute="leadingMargin" id="TnG-ZY-VSb"/>
+                                                <constraint firstItem="vSv-r2-cU3" firstAttribute="trailing" secondItem="3oS-Aa-30d" secondAttribute="trailingMargin" id="euK-oC-eBq"/>
+                                                <constraint firstItem="vSv-r2-cU3" firstAttribute="leading" secondItem="rTP-Zp-Rzo" secondAttribute="trailing" constant="8" id="pIV-0H-U6V"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="rTP-Zp-Rzo" secondAttribute="bottom" constant="3" id="qWC-Mz-ljL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Abb-eR-yty" firstAttribute="top" secondItem="rrK-0y-XD3" secondAttribute="bottom" id="gV8-Qe-h49"/>
+                            <constraint firstItem="rrK-0y-XD3" firstAttribute="leading" secondItem="5ax-md-WZN" secondAttribute="leadingMargin" constant="-20" id="kNN-ik-26k"/>
+                            <constraint firstItem="rrK-0y-XD3" firstAttribute="top" secondItem="1XN-4n-J1j" secondAttribute="bottom" id="u41-Uk-jLj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rrK-0y-XD3" secondAttribute="trailing" constant="-20" id="xz0-1h-K3d"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="rrK-0y-XD3" id="zBy-q4-jnc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UvN-30-yh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -116,12 +166,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kse-ig-xdL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Kse-ig-xdL">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="companyCell" id="ZTc-rw-RD2">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZTc-rw-RD2" id="C0g-Jw-0VE">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>

@@ -75,7 +75,7 @@ class Company {
         
         self.comments = company["comments"] as! String
         
-    }
+       }
     
     ///Returns all the inforamtions about a company to make it easy for the Search Engine to look for informations inside companies data.
     func description () -> String {

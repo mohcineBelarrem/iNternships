@@ -100,8 +100,16 @@
 				4B8DF41F1DA50A45006CC4E8 /* AllCompaniesVC.swift */,
 				4B8DF4211DA53801006CC4E8 /* CompaniesDetailVC.swift */,
 				4BC240BF1DA6D4CF00C6263A /* NewCompanyVC.swift */,
+				4B92A7CF1DA7C8D600F8E7DE /* View */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		4B92A7CF1DA7C8D600F8E7DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

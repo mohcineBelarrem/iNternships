@@ -23,6 +23,16 @@ class CompaniesRetriever {
         self.directory = CompaniesDirectory()
     }
     
+    func getCompanyComponents() -> [String] {
+        
+     return self.directory.companyComponents
+    }
+    
+    func getHumanReadableCompanyComponents() -> [String] {
+        
+        return self.directory.humanReadableCompanyCompnents
+    }
+    
     ///Method responsible for loading JSON data, parsing it and loading it in the directory variable
     func loadCompaniesData() {
        

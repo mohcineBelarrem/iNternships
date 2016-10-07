@@ -35,6 +35,8 @@ class CompaniesRetriever {
     
     ///Method responsible for loading JSON data, parsing it and loading it in the directory variable
     func loadCompaniesData() {
+        
+        self.directory.companiesList = []
        
         do {
             let url = NSURL(string: "http://testarea.belarrem.com/companies.php?password=\(password)")

@@ -69,7 +69,7 @@ class CompaniesRetriever {
         return self.directory.companiesList
     }
     
-    func createNewCompany(params:String){
+    func createNewCompany(companyInformations : [String]){
         
         // Do any additional setup after loading the view.
         
@@ -79,7 +79,7 @@ class CompaniesRetriever {
         
         request.HTTPMethod = "POST"// Compose a query string
         
-        let postString = params;
+        let postString = createPostString(companyInformations);
         
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
@@ -110,6 +110,20 @@ class CompaniesRetriever {
             }
         }
         task.resume()
+    }
+    
+    func createPostString (companyInformations : [String]) -> String {
+        
+        var postString = "\(directory.companyComponents[0])=\(companyInformations[0])&"
+        
+        
+        for i in 1...companyInformations.count-1 {
+            
+            postString = "\(postString)&\(directory.companyComponents[i])=\(companyInformations[i])"
+        }
+        
+        print(postString)
+        return postString
     }
     
 }

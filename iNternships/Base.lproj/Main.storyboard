@@ -79,7 +79,7 @@
                     <navigationItem key="navigationItem" title="Home" id="EGY-XL-33D"/>
                     <connections>
                         <segue destination="opJ-M4-hvH" kind="show" identifier="showAllCompaniesScene" id="M7r-N1-kDT"/>
-                        <segue destination="4ZJ-PG-bHT" kind="show" identifier="showNewCompanyScene" id="ZFg-7W-kws"/>
+                        <segue destination="4ZJ-PG-bHT" kind="showDetail" identifier="showNewCompanyScene" id="ZFg-7W-kws"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -97,7 +97,34 @@
                     <view key="view" contentMode="scaleToFill" id="5ax-md-WZN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rod-sy-xRJ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Pte-2Z-DPY"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="New" id="IKR-U7-U9I">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="v0p-4m-2wc">
+                                            <connections>
+                                                <action selector="cancelCreation:" destination="4ZJ-PG-bHT" id="yfV-23-1kR"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QnH-ze-iIl">
+                                            <connections>
+                                                <action selector="addCompany:" destination="4ZJ-PG-bHT" id="v5f-og-OyE"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rod-sy-xRJ" secondAttribute="trailing" constant="-20" id="3NB-Fj-hdL"/>
+                            <constraint firstItem="Rod-sy-xRJ" firstAttribute="top" secondItem="1XN-4n-J1j" secondAttribute="bottom" constant="-20" id="hkm-kE-4f7"/>
+                            <constraint firstItem="Rod-sy-xRJ" firstAttribute="leading" secondItem="5ax-md-WZN" secondAttribute="leadingMargin" constant="-20" id="rcp-YB-WHx"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UvN-30-yh0" userLabel="First Responder" sceneMemberID="firstResponder"/>

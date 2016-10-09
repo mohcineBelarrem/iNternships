@@ -16,6 +16,7 @@ class Company {
     var id : Int
     var name : String
     var location : String
+    var coordinates : String
     var size : String
     var goal : String
     var soughtProfile : String
@@ -59,6 +60,7 @@ class Company {
         
         self.name = company["name"] as! String
         self.location = company["location"] as! String
+        self.coordinates = company["coordinates"] as! String
         self.size = company["size"] as! String
         
         self.goal = company["goal"] as! String
@@ -110,7 +112,7 @@ class Company {
                 publicationDate,
                 startDate,
                 salary,
-                comments]
+                comments,coordinates]
         
     }
     

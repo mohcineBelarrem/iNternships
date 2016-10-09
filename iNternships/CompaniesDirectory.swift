@@ -38,7 +38,7 @@ class CompaniesDirectory {
                                   "pubilcation_date",
                                   "start_date",
                                   "salary",
-                                  "comments"]
+                                  "comments","coordinates"]
         
         self.humanReadableCompanyCompnents = ["Name",
                                               "Location",
@@ -52,7 +52,8 @@ class CompaniesDirectory {
                                               "Pubilcation Date",
                                               "Start Date",
                                               "Salary",
-                                              "Comments"]
+                                              "Comments",
+                                              "Coordinates"]
         
     }
     

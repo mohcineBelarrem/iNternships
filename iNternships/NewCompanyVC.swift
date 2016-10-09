@@ -34,6 +34,17 @@ class NewCompanyVC: UIViewController {
         for i in 0...self.humanReadableCompanyComponents.count-1 {
             
             let label = scrollView.viewWithTag(200+i) as! UITextField
+            
+            if(label.text!.isEmpty) {
+                
+                UIAlertView(title: "Empty Informations",
+                            message: "You need to fill all the Informations",
+                            delegate: nil,
+                            cancelButtonTitle: "Ok").show()
+                
+                return
+            }
+            
             newCompanyInformations.append(label.text!)
             
         }

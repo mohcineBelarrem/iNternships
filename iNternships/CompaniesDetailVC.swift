@@ -18,6 +18,8 @@ class CompaniesDetailVC: UITableViewController {
 
        self.navigationItem.title = self.companyToDetail.name
        self.sectionsHeaders = CompaniesRetriever.sharedInstance.getHumanReadableCompanyComponents()
+        
+        print("\(companyToDetail.coordinates)")
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

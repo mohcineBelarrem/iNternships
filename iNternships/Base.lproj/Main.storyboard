@@ -131,6 +131,56 @@
             </objects>
             <point key="canvasLocation" x="441" y="521"/>
         </scene>
+        <!--Companies Map-->
+        <scene sceneID="hIR-q4-GSu">
+            <objects>
+                <viewController title="Companies Map" id="K2t-AV-WEB" customClass="CompaniesMapVC" customModule="iNternships" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sta-3P-GUp"/>
+                        <viewControllerLayoutGuide type="bottom" id="TcG-P3-hUg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UfJ-ND-zai">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0RD-Cb-5ck">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="dut-YV-2oi"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Map" id="c1p-cA-jEB">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="acq-5z-8WS">
+                                            <connections>
+                                                <action selector="cancel:" destination="K2t-AV-WEB" id="y89-oC-3LW"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="b8n-nO-WsY">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0RD-Cb-5ck" firstAttribute="leading" secondItem="UfJ-ND-zai" secondAttribute="leadingMargin" constant="-20" id="C8h-9G-SVD"/>
+                            <constraint firstItem="b8n-nO-WsY" firstAttribute="top" secondItem="0RD-Cb-5ck" secondAttribute="bottom" id="CwS-5F-H44"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="b8n-nO-WsY" secondAttribute="trailing" constant="-20" id="R8w-Gf-9Ch"/>
+                            <constraint firstItem="0RD-Cb-5ck" firstAttribute="top" secondItem="UfJ-ND-zai" secondAttribute="topMargin" id="SJO-wA-a8M"/>
+                            <constraint firstItem="b8n-nO-WsY" firstAttribute="leading" secondItem="UfJ-ND-zai" secondAttribute="leadingMargin" constant="-20" id="e3p-YW-p1N"/>
+                            <constraint firstItem="TcG-P3-hUg" firstAttribute="top" secondItem="b8n-nO-WsY" secondAttribute="bottom" id="f6s-nm-wDK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0RD-Cb-5ck" secondAttribute="trailing" constant="-20" id="z5y-C1-lof"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="b8n-nO-WsY" id="X4o-BX-JaW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ip-dz-lUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1158" y="521"/>
+        </scene>
         <!--All Companies-->
         <scene sceneID="IpN-6T-GZz">
             <objects>
@@ -169,6 +219,7 @@
                     <connections>
                         <outlet property="tableView" destination="Kse-ig-xdL" id="SEl-0e-uHm"/>
                         <segue destination="NHy-jT-VaT" kind="show" identifier="showCompanyDetail" id="jEe-2g-pJF"/>
+                        <segue destination="K2t-AV-WEB" kind="showDetail" identifier="showCompaniesMapScene" id="q0r-N2-Jan"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p17-LK-rwD" userLabel="First Responder" sceneMemberID="firstResponder"/>

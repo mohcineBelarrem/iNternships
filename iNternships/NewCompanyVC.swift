@@ -71,6 +71,7 @@ class NewCompanyVC: UIViewController {
             textField.placeholder = "Type the \(self.humanReadableCompanyComponents[i])"
             textField.tag = 200+i
             textField.font = UIFont(name: "Futura", size: 16)
+            textField.textColor = UIColor(red: CGFloat(0), green: CGFloat(150/255.0), blue: CGFloat(1.0), alpha: CGFloat(1.0))
             textField.clearButtonMode = UITextFieldViewMode.WhileEditing
             
             

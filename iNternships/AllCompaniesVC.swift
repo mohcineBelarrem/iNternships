@@ -42,6 +42,14 @@ class AllCompaniesVC: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         self.tableView.reloadData()
         
+        let showMapButton = UIBarButtonItem(title: "Map", style: .Plain, target: self, action: #selector(showCompaniesMap))
+        self.navigationItem.rightBarButtonItem  = showMapButton
+        
+    }
+    
+    func showCompaniesMap() {
+        
+        self.performSegueWithIdentifier("showCompaniesMapScene", sender: self)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

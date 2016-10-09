@@ -33,6 +33,20 @@ class CompaniesRetriever {
         return self.directory.humanReadableCompanyCompnents
     }
     
+    func getCompanyByName(name : String) -> AnyObject {
+        
+        for company in directory.companiesList {
+            
+            if name == company.name {
+                
+                return company
+            }
+        }
+        
+        return false
+    }
+    
+    
     ///Method responsible for loading JSON data, parsing it and loading it in the directory variable
     func loadCompaniesData() {
         

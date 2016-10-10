@@ -21,6 +21,7 @@ class Company {
     var goal : String
     var soughtProfile : String
     var applicationMethod : String
+    var applicationDate : String
     var contactName : String
     var contactMail : String
     var contactNumber : String
@@ -65,7 +66,9 @@ class Company {
         
         self.goal = company["goal"] as! String
         self.soughtProfile = company["sought_profile"] as! String
+        
         self.applicationMethod = company["application_method"] as! String
+        self.applicationDate = company["application_date"] as! String
         
         self.contactName = company["contact_name"] as! String
         self.contactMail = company["contact_mail"] as! String
@@ -88,6 +91,7 @@ class Company {
                 goal + " " +
                 soughtProfile + " " +
                 applicationMethod + " " +
+                applicationDate + " " +
                 contactName + " " +
                 contactMail + " " +
                 contactNumber + " " +
@@ -106,13 +110,15 @@ class Company {
                 goal,
                 soughtProfile,
                 applicationMethod,
+                applicationDate,
                 contactName,
                 contactMail,
                 contactNumber,
                 publicationDate,
                 startDate,
                 salary,
-                comments,coordinates]
+                comments,
+                coordinates]
         
     }
     
@@ -124,6 +130,7 @@ class Company {
                 "goal: " + goal + "\n" +
                 "soughtProfile: " + soughtProfile + "\n" +
                 "applicationMethod: " + applicationMethod + "\n" +
+                "applicationDate: " + applicationDate + "\n" +
                 "contactName: " + contactName + "\n" +
                 "contactMail: " + contactMail + "\n" +
                 "contactNumber: " + contactNumber + "\n" +

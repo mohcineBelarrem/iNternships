@@ -349,11 +349,12 @@
                     <connections>
                         <outlet property="passwordTextField" destination="Unx-Bj-9MJ" id="kB9-Jk-Z1d"/>
                         <outlet property="usernameTextField" destination="3WQ-Lw-FqG" id="NIV-Gl-Pe9"/>
+                        <segue destination="gJZ-MH-UVx" kind="show" identifier="showHomeScene" id="YnK-Bf-LOB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cD9-4D-Njr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-362" y="-136"/>
+            <point key="canvasLocation" x="-449" y="-144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="I2t-Os-dmm">
@@ -371,7 +372,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QbQ-c1-hh2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="536" y="-144"/>
+            <point key="canvasLocation" x="391" y="-144"/>
         </scene>
     </scenes>
     <resources>

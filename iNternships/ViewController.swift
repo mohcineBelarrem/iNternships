@@ -13,27 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-//        let alertController = UIAlertController(title: "Security Check", message: "For Security reasons, enter the password.", preferredStyle: UIAlertControllerStyle.Alert)
-//        
-//        alertController.addTextFieldWithConfigurationHandler(nil)
-//        
-//        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-//            
-//            let alertTextField = alertController.textFields![0] as UITextField
-//            
-//            CompaniesRetriever.sharedInstance.password = alertTextField.text!
-//            
-//        }
-//        
-//        alertController.addAction(OKAction)
-//        
-//        presentViewController(alertController, animated: true, completion: nil)
-        
-        
     }
 
-    
 
     @IBAction func showAllCompanies(sender: AnyObject) {
         

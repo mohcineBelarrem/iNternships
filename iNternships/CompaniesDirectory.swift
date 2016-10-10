@@ -17,6 +17,8 @@ class CompaniesDirectory {
     var companyComponents : [String]
     var humanReadableCompanyCompnents : [String]
     
+    var currentUser : User!
+    
     
     /**
         Initializes a new CompaniesDirectory which sole purpose is to store a list of companies.

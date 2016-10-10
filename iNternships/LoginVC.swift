@@ -11,7 +11,6 @@ import UIKit
 class LoginVC: UIViewController,UITextFieldDelegate {
 
     @IBOutlet var usernameTextField: UITextField!
-    
     @IBOutlet var passwordTextField: UITextField!
     
     
@@ -39,14 +38,13 @@ class LoginVC: UIViewController,UITextFieldDelegate {
             
         } else {
             
-            //NSLog("Trying to login...")
-            //TODO: ask the retriever to look for information
-            let  ans = CompaniesRetriever.sharedInstance.login(username, password: password)
+            let  answer = CompaniesRetriever.sharedInstance.login(username, password: password)
             
             
-            if ans {
+            if answer {
                 
-                print("access granted")
+                CompaniesRetriever.sharedInstance.password = password
+                self.performSegueWithIdentifier("showHomeScene", sender: self)
                 
             } else {
                 

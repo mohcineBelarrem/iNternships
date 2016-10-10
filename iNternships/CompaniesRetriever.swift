@@ -58,6 +58,8 @@ class CompaniesRetriever {
         do {
             let url = NSURL(string: "http://testarea.belarrem.com/login.php?username=\(username)&password=\(password)")
             
+            //TODO: must examine for spec chars
+            
             let data = NSData(contentsOfURL: url!)
             
             let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
@@ -66,7 +68,8 @@ class CompaniesRetriever {
             
             if response == "200" {
                 
-                //TODO: Load user
+                let user = json["user_info"] as! NSDictionary
+                self.directory.currentUser = User(user: user)
                 return true
             }
             else {

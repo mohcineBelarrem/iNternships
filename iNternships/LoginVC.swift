@@ -39,8 +39,23 @@ class LoginVC: UIViewController,UITextFieldDelegate {
             
         } else {
             
-            NSLog("Trying to login...")
+            //NSLog("Trying to login...")
             //TODO: ask the retriever to look for information
+            let  ans = CompaniesRetriever.sharedInstance.login(username, password: password)
+            
+            
+            if ans {
+                
+                print("access granted")
+                
+            } else {
+                
+                UIAlertView(title: "Error",
+                            message: "Wronng username or password.",
+                            delegate: nil,
+                            cancelButtonTitle: "Ok").show()
+            }
+            
         }
         
         

@@ -46,6 +46,43 @@ class CompaniesRetriever {
         return false
     }
     
+    ///Accessor to get the list of companies downloaded from the server
+    func getCompaniesList () -> [Company] {
+        
+        return self.directory.companiesList
+    }
+    
+    
+    func login(username : String, password : String ) -> Bool {
+        
+        do {
+            let url = NSURL(string: "http://testarea.belarrem.com/login.php?username=\(username)&password=\(password)")
+            
+            let data = NSData(contentsOfURL: url!)
+            
+            let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+            
+            let response = json["response"] as! String
+            
+            if response == "200" {
+                
+                //TODO: Load user
+                return true
+            }
+            else {
+                return false
+            }
+            
+        } catch {
+            
+            print("error serializing JSON: \(error)")
+            return false
+        }
+
+    }
+    
+    
+    
     
     ///Method responsible for loading JSON data, parsing it and loading it in the directory variable
     func loadCompaniesData() {
@@ -76,16 +113,9 @@ class CompaniesRetriever {
             print("error serializing JSON: \(error)")
         }
 
-            }
-    ///Accessor to get the list of companies downloaded from the server
-    func getCompaniesList () -> [Company] {
-        
-        return self.directory.companiesList
     }
     
     func createNewCompany(companyInformations : [String]){
-        
-        // Do any additional setup after loading the view.
         
         let myUrl = NSURL(string: "http://testarea.belarrem.com/newcompany.php?password=\(password)");
         

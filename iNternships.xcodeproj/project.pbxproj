@@ -22,6 +22,7 @@
 		4BC240C01DA6D4CF00C6263A /* NewCompanyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC240BF1DA6D4CF00C6263A /* NewCompanyVC.swift */; };
 		4BC8EB871DAAD588008357C0 /* CompaniesMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8EB861DAAD588008357C0 /* CompaniesMapVC.swift */; };
 		4BC8EB891DAC12C9008357C0 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8EB881DAC12C9008357C0 /* LoginVC.swift */; };
+		4BC8EB8B1DAC229A008357C0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8EB8A1DAC229A008357C0 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		4BC240BF1DA6D4CF00C6263A /* NewCompanyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewCompanyVC.swift; sourceTree = "<group>"; };
 		4BC8EB861DAAD588008357C0 /* CompaniesMapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompaniesMapVC.swift; sourceTree = "<group>"; };
 		4BC8EB881DAC12C9008357C0 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		4BC8EB8A1DAC229A008357C0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				4B8DF4151DA4EE0B006CC4E8 /* Company.swift */,
 				4B8DF4181DA4FB33006CC4E8 /* CompaniesDirectory.swift */,
 				4BC240BD1DA638BF00C6263A /* test.json */,
+				4BC8EB8A1DAC229A008357C0 /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				4B8DF4201DA50A45006CC4E8 /* AllCompaniesVC.swift in Sources */,
 				4B8DF4191DA4FB33006CC4E8 /* CompaniesDirectory.swift in Sources */,
 				4BC240C01DA6D4CF00C6263A /* NewCompanyVC.swift in Sources */,
+				4BC8EB8B1DAC229A008357C0 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

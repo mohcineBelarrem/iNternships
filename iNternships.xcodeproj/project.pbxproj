@@ -21,6 +21,7 @@
 		4BC240BE1DA638BF00C6263A /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BC240BD1DA638BF00C6263A /* test.json */; };
 		4BC240C01DA6D4CF00C6263A /* NewCompanyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC240BF1DA6D4CF00C6263A /* NewCompanyVC.swift */; };
 		4BC8EB871DAAD588008357C0 /* CompaniesMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8EB861DAAD588008357C0 /* CompaniesMapVC.swift */; };
+		4BC8EB891DAC12C9008357C0 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8EB881DAC12C9008357C0 /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		4BC240BD1DA638BF00C6263A /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		4BC240BF1DA6D4CF00C6263A /* NewCompanyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewCompanyVC.swift; sourceTree = "<group>"; };
 		4BC8EB861DAAD588008357C0 /* CompaniesMapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompaniesMapVC.swift; sourceTree = "<group>"; };
+		4BC8EB881DAC12C9008357C0 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				4B8DF4211DA53801006CC4E8 /* CompaniesDetailVC.swift */,
 				4BC240BF1DA6D4CF00C6263A /* NewCompanyVC.swift */,
 				4BC8EB861DAAD588008357C0 /* CompaniesMapVC.swift */,
+				4BC8EB881DAC12C9008357C0 /* LoginVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				4B8DF41E1DA5047E006CC4E8 /* CompaniesRetriever.swift in Sources */,
 				4B8DF4221DA53801006CC4E8 /* CompaniesDetailVC.swift in Sources */,
 				4B8DF4041DA47C94006CC4E8 /* AppDelegate.swift in Sources */,
+				4BC8EB891DAC12C9008357C0 /* LoginVC.swift in Sources */,
 				4BC8EB871DAAD588008357C0 /* CompaniesMapVC.swift in Sources */,
 				4B8DF4161DA4EE0B006CC4E8 /* Company.swift in Sources */,
 				4B8DF4201DA50A45006CC4E8 /* AllCompaniesVC.swift in Sources */,

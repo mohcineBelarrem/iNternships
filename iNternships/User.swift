@@ -16,9 +16,9 @@ class User: NSObject {
     
     init (user : NSDictionary) {
         
-        self.id = user["id"]  as! String
-        self.name = user["name"] as! String
-        self.password = user["password"] as! String
+        self.id = user["user_id"]  as! String
+        self.name = user["user_name"] as! String
+        self.password = user["user_password"] as! String
     }
     
 }

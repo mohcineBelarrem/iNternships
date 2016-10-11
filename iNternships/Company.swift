@@ -57,9 +57,9 @@ class Company {
     init(company : NSDictionary) {
         
         
-        self.id = Int (company["id"] as! String)!
+        self.id = Int (company["company_id"] as! String)!
         
-        self.name = company["name"] as! String
+        self.name = company["company_name"] as! String
         self.location = company["location"] as! String
         self.coordinates = company["coordinates"] as! String
         self.size = company["size"] as! String

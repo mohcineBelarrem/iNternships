@@ -28,7 +28,7 @@ class CompaniesDirectory {
     init(){
         
         self.companiesList = []
-        self.companyComponents = ["name",
+        self.companyComponents = ["company_name",
                                   "location",
                                   "size",
                                   "goal",
@@ -43,7 +43,7 @@ class CompaniesDirectory {
                                   "salary",
                                   "comments","coordinates"]
         
-        self.humanReadableCompanyCompnents = ["Name",
+        self.humanReadableCompanyCompnents = ["Company Name",
                                               "Location",
                                               "Size",
                                               "Goal",

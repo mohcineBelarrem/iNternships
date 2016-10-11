@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewCompanyVC: UIViewController {
+class NewCompanyVC: UIViewController,UITextFieldDelegate {
     
     var scrollView: UIScrollView!
     var humanReadableCompanyComponents : [String]!
@@ -59,9 +59,11 @@ class NewCompanyVC: UIViewController {
         
         self.scrollView = UIScrollView(frame: CGRectMake(0,0, self.view.frame.width, self.view.frame.height))
         
-        self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + CGFloat(80 * numberOfElements)-self.view.frame.height)
+        self.scrollView.contentSize = CGSize(width: self.view.frame.width,
+                                             height: self.view.frame.height + CGFloat(80 * numberOfElements)-self.view.frame.height)
         self.scrollView.showsVerticalScrollIndicator = true
         self.scrollView.scrollEnabled = true
+        self.scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.Interactive
         self.view.addSubview(self.scrollView)
         
         for i in 0...numberOfElements-1 {
@@ -79,12 +81,33 @@ class NewCompanyVC: UIViewController {
             textField.font = UIFont(name: "Futura", size: 16)
             textField.textColor = UIColor(red: CGFloat(0), green: CGFloat(150/255.0), blue: CGFloat(1.0), alpha: CGFloat(1.0))
             textField.clearButtonMode = UITextFieldViewMode.WhileEditing
+            textField.delegate = self
             
-            
+            if i <= numberOfElements - 2 {
+            textField.returnKeyType = UIReturnKeyType.Next
+            } else {
+                textField.returnKeyType = UIReturnKeyType.Done
+            }
+                
             container.addSubview(label)
             container.addSubview(textField)
             self.scrollView.addSubview(container)
         }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+       let max = 200 + self.humanReadableCompanyComponents.count - 1
+        
+       let tag = textField.tag
+       
+        if  tag >= 200 && tag < max {
+            self.scrollView.viewWithTag(tag+1)?.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        
+        return false
     }
     
     

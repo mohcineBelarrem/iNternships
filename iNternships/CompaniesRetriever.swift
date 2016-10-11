@@ -161,13 +161,14 @@ class CompaniesRetriever {
     
     func createPostString (companyInformations : [String]) -> String {
         
-        var postString = "\(directory.companyComponents[0])=\(companyInformations[0])&"
+        var postString = "user_id=\(directory.currentUser.id)&\(directory.companyComponents[0])=\(companyInformations[0])&"
         
         
         for i in 1...companyInformations.count-1 {
             
             postString = "\(postString)&\(directory.companyComponents[i])=\(companyInformations[i])"
         }
+        
         
         print(postString)
         return postString

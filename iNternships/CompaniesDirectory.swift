@@ -38,7 +38,7 @@ class CompaniesDirectory {
                                   "contact_name",
                                   "contact_mail",
                                   "contact_number",
-                                  "pubilcation_date",
+                                  "publication_date",
                                   "start_date",
                                   "salary",
                                   "comments","coordinates"]
@@ -53,7 +53,7 @@ class CompaniesDirectory {
                                               "Contact Name",
                                               "Contact Mail",
                                               "Contact Number",
-                                              "Pubilcation Date",
+                                              "Publication Date",
                                               "Start Date",
                                               "Salary",
                                               "Comments",

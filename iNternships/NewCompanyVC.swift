@@ -16,13 +16,13 @@ class NewCompanyVC: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // CompaniesRetriever.sharedInstance.createNewCompany("name=mozzilla%20Foundation%27s%20Basement&location=Miami,Florida%20Usa")
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+
         
         self.humanReadableCompanyComponents = CompaniesRetriever.sharedInstance.getHumanReadableCompanyComponents()
         addUIElements(self.humanReadableCompanyComponents.count)
       
-        
         let addCompanyButton = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: #selector(addCompany))
         self.navigationItem.rightBarButtonItem  = addCompanyButton
     }
@@ -63,7 +63,7 @@ class NewCompanyVC: UIViewController,UITextFieldDelegate {
                                              height: self.view.frame.height + CGFloat(80 * numberOfElements)-self.view.frame.height)
         self.scrollView.showsVerticalScrollIndicator = true
         self.scrollView.scrollEnabled = true
-        self.scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.Interactive
+        //self.scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.OnDrag
         self.view.addSubview(self.scrollView)
         
         for i in 0...numberOfElements-1 {
@@ -110,7 +110,32 @@ class NewCompanyVC: UIViewController,UITextFieldDelegate {
         return false
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.scrollView.endEditing(true)
+    }
     
-     
+    
+    func keyboardWillShow(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            
+        let numberOfElements =  self.humanReadableCompanyComponents.count
+            
+        self.scrollView.contentSize = CGSize(width: self.view.frame.width,
+                                                 height: 1.2*keyboardSize.height + self.view.frame.height + CGFloat(80 * numberOfElements)-self.view.frame.height)
+        }
+        
+        
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+       
+        let numberOfElements =  self.humanReadableCompanyComponents.count
+        
+        self.scrollView.contentSize = CGSize(width: self.view.frame.width,
+                                             height: self.view.frame.height + CGFloat(80 * numberOfElements)-self.view.frame.height)
+        
+    }
+    
     
 }

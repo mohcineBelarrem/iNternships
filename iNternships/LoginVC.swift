@@ -31,7 +31,7 @@ class LoginVC: UIViewController,UITextFieldDelegate {
         
         if username.isEmpty  || password.isEmpty {
             
-            (UIAlertView(title: "Empt field",
+            (UIAlertView(title: "Empty field",
                          message: "U must fill all the infomations to log in",
                          delegate: nil ,
                          cancelButtonTitle: "Ok")).show()

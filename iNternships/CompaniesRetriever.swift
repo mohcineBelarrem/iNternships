@@ -93,7 +93,7 @@ class CompaniesRetriever {
         self.directory.companiesList = []
        
         do {
-            let url = NSURL(string: "http://testarea.belarrem.com/companies.php?password=\(password)")
+            let url = NSURL(string: "http://testarea.belarrem.com/companies.php?id=\(directory.currentUser.id)&password=\(directory.currentUser.password)")
             
             let data = NSData(contentsOfURL: url!)
             

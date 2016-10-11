@@ -153,22 +153,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username...." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3WQ-Lw-FqG">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type the username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3WQ-Lw-FqG">
                                 <rect key="frame" x="20" y="50" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password...." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Unx-Bj-9MJ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type the password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Unx-Bj-9MJ">
                                 <rect key="frame" x="20" y="88" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dj1-Gh-H4Y">
-                                <rect key="frame" x="238" y="540" width="125" height="40"/>
+                                <rect key="frame" x="238" y="148" width="125" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="AKs-pm-m4W"/>
-                                    <constraint firstAttribute="width" constant="125" id="DpR-Do-u55"/>
+                                    <constraint firstAttribute="height" constant="40" id="MSK-WJ-9lX"/>
+                                    <constraint firstAttribute="width" constant="125" id="qzy-Wo-MLf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <state key="normal" title="Log In">
@@ -186,14 +186,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3WQ-Lw-FqG" firstAttribute="trailing" secondItem="6hU-ya-CwE" secondAttribute="trailingMargin" id="2Ed-qk-3hL"/>
-                            <constraint firstItem="3WQ-Lw-FqG" firstAttribute="leading" secondItem="6hU-ya-CwE" secondAttribute="leadingMargin" id="ERR-Oi-9NU"/>
-                            <constraint firstItem="efr-A7-Jnf" firstAttribute="top" secondItem="dj1-Gh-H4Y" secondAttribute="bottom" constant="20" id="KbG-HW-39W"/>
-                            <constraint firstItem="Unx-Bj-9MJ" firstAttribute="top" secondItem="3WQ-Lw-FqG" secondAttribute="bottom" constant="8" id="ZPl-bg-s8m"/>
-                            <constraint firstItem="dj1-Gh-H4Y" firstAttribute="centerX" secondItem="6hU-ya-CwE" secondAttribute="centerX" id="a4P-bS-3PW"/>
-                            <constraint firstItem="3WQ-Lw-FqG" firstAttribute="top" secondItem="W7N-V4-Ix1" secondAttribute="bottom" constant="30" id="efK-tz-mnv"/>
-                            <constraint firstItem="Unx-Bj-9MJ" firstAttribute="trailing" secondItem="6hU-ya-CwE" secondAttribute="trailingMargin" id="gcM-mc-V3c"/>
-                            <constraint firstItem="Unx-Bj-9MJ" firstAttribute="leading" secondItem="6hU-ya-CwE" secondAttribute="leadingMargin" id="zIm-dw-3pv"/>
+                            <constraint firstItem="dj1-Gh-H4Y" firstAttribute="centerX" secondItem="6hU-ya-CwE" secondAttribute="centerX" id="6ch-mA-DJW"/>
+                            <constraint firstItem="Unx-Bj-9MJ" firstAttribute="leading" secondItem="6hU-ya-CwE" secondAttribute="leadingMargin" id="9pw-GN-PQ5"/>
+                            <constraint firstItem="Unx-Bj-9MJ" firstAttribute="top" secondItem="3WQ-Lw-FqG" secondAttribute="bottom" constant="8" id="Ado-xD-Tsu"/>
+                            <constraint firstItem="3WQ-Lw-FqG" firstAttribute="top" secondItem="W7N-V4-Ix1" secondAttribute="bottom" constant="30" id="Hzi-75-1J3"/>
+                            <constraint firstItem="3WQ-Lw-FqG" firstAttribute="trailing" secondItem="6hU-ya-CwE" secondAttribute="trailingMargin" id="S7m-Wt-CTW"/>
+                            <constraint firstItem="Unx-Bj-9MJ" firstAttribute="trailing" secondItem="6hU-ya-CwE" secondAttribute="trailingMargin" id="Zlo-0f-eD1"/>
+                            <constraint firstItem="3WQ-Lw-FqG" firstAttribute="leading" secondItem="6hU-ya-CwE" secondAttribute="leadingMargin" id="fLT-cX-5vf"/>
+                            <constraint firstItem="dj1-Gh-H4Y" firstAttribute="top" secondItem="Unx-Bj-9MJ" secondAttribute="bottom" constant="30" id="m9z-vI-Rej"/>
                         </constraints>
                     </view>
                     <connections>

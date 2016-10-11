@@ -119,7 +119,10 @@ class CompaniesRetriever {
                     }
                 }
             else {
-                UIAlertView(title: "Error", message: "Wrong Password, ReLaunch the app and try again", delegate: nil, cancelButtonTitle: "Ok").show()
+                UIAlertView(title: "Error",
+                            message: "Error",
+                            delegate: nil,
+                            cancelButtonTitle: "Ok").show()
             }
         } catch {
             print("error serializing JSON: \(error)")

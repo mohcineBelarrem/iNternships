@@ -46,8 +46,17 @@ class CompaniesRetriever {
         return false
     }
     
+    
+    func getCurrentUser() -> User {
+        
+        return directory.currentUser
+    }
+    
+    
     ///Accessor to get the list of companies downloaded from the server
     func getCompaniesList () -> [Company] {
+        
+        self.loadCompaniesData()
         
         return self.directory.companiesList
     }

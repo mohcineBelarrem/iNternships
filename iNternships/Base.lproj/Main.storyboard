@@ -6,86 +6,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController title="Home" id="BYZ-38-t0r" customClass="ViewController" customModule="iNternships" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ytb-8d-3Vc">
-                                <rect key="frame" x="20" y="540" width="125" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="Otp-mY-W36"/>
-                                    <constraint firstAttribute="height" constant="40" id="iRA-g6-fC9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
-                                <state key="normal" title="New Company">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="addNewCompany:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Az5-Eh-yfk"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b53-dv-Teo">
-                                <rect key="frame" x="455" y="540" width="125" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="CFq-Zr-WHQ"/>
-                                    <constraint firstAttribute="width" constant="125" id="gog-MO-q6n"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
-                                <state key="normal" title="All Companies">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="showAllCompanies:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dcS-62-BXK"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="7WY-Km-7Sd">
-                                <rect key="frame" x="150" y="150" width="300" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="e06-mN-iyL"/>
-                                    <constraint firstAttribute="width" constant="300" id="swd-7Z-9mD"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="b53-dv-Teo" secondAttribute="bottom" constant="20" id="IDS-H7-cEh"/>
-                            <constraint firstItem="b53-dv-Teo" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="KVF-xp-sac"/>
-                            <constraint firstItem="7WY-Km-7Sd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tv0-s0-NZg"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ytb-8d-3Vc" secondAttribute="bottom" constant="20" id="m6q-D8-hp2"/>
-                            <constraint firstItem="7WY-Km-7Sd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nXA-wf-5DU"/>
-                            <constraint firstItem="ytb-8d-3Vc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="nXc-EN-q3H"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Home" id="EGY-XL-33D"/>
-                    <connections>
-                        <segue destination="opJ-M4-hvH" kind="show" identifier="showAllCompaniesScene" id="M7r-N1-kDT"/>
-                        <segue destination="4ZJ-PG-bHT" kind="showDetail" identifier="showNewCompanyScene" id="ZFg-7W-kws"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1297" y="-144"/>
-        </scene>
         <!--New Company-->
         <scene sceneID="6tO-gC-Pt0">
             <objects>
@@ -97,39 +17,15 @@
                     <view key="view" contentMode="scaleToFill" id="5ax-md-WZN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rod-sy-xRJ">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="Pte-2Z-DPY"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="New" id="IKR-U7-U9I">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="v0p-4m-2wc">
-                                            <connections>
-                                                <action selector="cancelCreation:" destination="4ZJ-PG-bHT" id="yfV-23-1kR"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QnH-ze-iIl">
-                                            <connections>
-                                                <action selector="addCompany:" destination="4ZJ-PG-bHT" id="v5f-og-OyE"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Rod-sy-xRJ" secondAttribute="trailing" constant="-20" id="3NB-Fj-hdL"/>
-                            <constraint firstItem="Rod-sy-xRJ" firstAttribute="top" secondItem="1XN-4n-J1j" secondAttribute="bottom" constant="-20" id="hkm-kE-4f7"/>
-                            <constraint firstItem="Rod-sy-xRJ" firstAttribute="leading" secondItem="5ax-md-WZN" secondAttribute="leadingMargin" constant="-20" id="rcp-YB-WHx"/>
-                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="7Cy-mb-fDs" kind="unwind" identifier="unwindNewCompany" unwindAction="unwindWithNewData:" id="Hci-2s-6cv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UvN-30-yh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1297" y="553"/>
+            <point key="canvasLocation" x="2864" y="567"/>
         </scene>
         <!--Companies Map-->
         <scene sceneID="hIR-q4-GSu">
@@ -150,11 +46,7 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="Map" id="c1p-cA-jEB">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="acq-5z-8WS">
-                                            <connections>
-                                                <action selector="cancel:" destination="K2t-AV-WEB" id="y89-oC-3LW"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="acq-5z-8WS"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -173,58 +65,17 @@
                             <constraint firstAttribute="trailingMargin" secondItem="0RD-Cb-5ck" secondAttribute="trailing" constant="-20" id="z5y-C1-lof"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="TNr-CP-zp7"/>
                     <connections>
                         <outlet property="mapView" destination="b8n-nO-WsY" id="X4o-BX-JaW"/>
+                        <segue destination="NHy-jT-VaT" kind="show" identifier="showCompanyDetail" id="4Ug-Vy-8w1"/>
+                        <segue destination="4ZJ-PG-bHT" kind="show" identifier="showNewCompanyScene" id="Zkp-Yd-BaQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ip-dz-lUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="7Cy-mb-fDs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2014" y="553"/>
-        </scene>
-        <!--All Companies-->
-        <scene sceneID="IpN-6T-GZz">
-            <objects>
-                <viewController title="All Companies" id="opJ-M4-hvH" customClass="AllCompaniesVC" customModule="iNternships" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Jwa-HH-1eM"/>
-                        <viewControllerLayoutGuide type="bottom" id="v99-MU-C6Q"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DKo-GV-k98">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Kse-ig-xdL">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="companyCell" id="ZTc-rw-RD2">
-                                        <rect key="frame" x="0.0" y="114" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZTc-rw-RD2" id="C0g-Jw-0VE">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Kse-ig-xdL" firstAttribute="leading" secondItem="DKo-GV-k98" secondAttribute="leadingMargin" constant="-20" id="JqZ-Ki-eHj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Kse-ig-xdL" secondAttribute="trailing" constant="-20" id="QNA-Ca-532"/>
-                            <constraint firstItem="Kse-ig-xdL" firstAttribute="top" secondItem="DKo-GV-k98" secondAttribute="topMargin" id="sPQ-FW-Sqj"/>
-                            <constraint firstItem="v99-MU-C6Q" firstAttribute="top" secondItem="Kse-ig-xdL" secondAttribute="bottom" id="xuf-6Q-9Be"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="Kse-ig-xdL" id="SEl-0e-uHm"/>
-                        <segue destination="NHy-jT-VaT" kind="show" identifier="showCompanyDetail" id="jEe-2g-pJF"/>
-                        <segue destination="K2t-AV-WEB" kind="showDetail" identifier="showCompaniesMapScene" id="q0r-N2-Jan"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p17-LK-rwD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2014" y="-144"/>
+            <point key="canvasLocation" x="2864" y="-144"/>
         </scene>
         <!--Companies Detail-->
         <scene sceneID="48j-I2-pho">
@@ -288,7 +139,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k29-Nu-BgI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2830" y="-144"/>
+            <point key="canvasLocation" x="3642" y="-144"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="l1V-nh-pwr">
@@ -329,7 +180,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="addNewCompany:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mvk-k5-3dU"/>
                                     <action selector="login:" destination="nhh-6q-uwj" eventType="touchUpInside" id="saa-xb-jOc"/>
                                 </connections>
                             </button>
@@ -349,33 +199,30 @@
                     <connections>
                         <outlet property="passwordTextField" destination="Unx-Bj-9MJ" id="kB9-Jk-Z1d"/>
                         <outlet property="usernameTextField" destination="3WQ-Lw-FqG" id="NIV-Gl-Pe9"/>
-                        <segue destination="gJZ-MH-UVx" kind="show" identifier="showHomeScene" id="YnK-Bf-LOB"/>
+                        <segue destination="BUU-qz-ddk" kind="showDetail" identifier="showMapScene" id="2l4-Te-fxh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cD9-4D-Njr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-449" y="-144"/>
+            <point key="canvasLocation" x="1089" y="-144"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="I2t-Os-dmm">
+        <scene sceneID="du2-UT-Kew">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gJZ-MH-UVx" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BUU-qz-ddk" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mo7-Vf-9CP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tGZ-YV-czb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7yo-Fj-9Ux"/>
+                        <segue destination="K2t-AV-WEB" kind="relationship" relationship="rootViewController" id="oTf-7C-vpY"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QbQ-c1-hh2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0JS-vF-Jgr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="391" y="-144"/>
+            <point key="canvasLocation" x="2052" y="-144"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="logo" width="300" height="300"/>
-    </resources>
 </document>

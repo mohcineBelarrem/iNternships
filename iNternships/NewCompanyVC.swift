@@ -20,14 +20,14 @@ class NewCompanyVC: UIViewController {
         
         
         self.humanReadableCompanyComponents = CompaniesRetriever.sharedInstance.getHumanReadableCompanyComponents()
+        addUIElements(self.humanReadableCompanyComponents.count)
+      
         
-        
-        addUIEleements(self.humanReadableCompanyComponents.count)
-        
+        let addCompanyButton = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: #selector(addCompany))
+        self.navigationItem.rightBarButtonItem  = addCompanyButton
     }
     
-    
-    @IBAction func addCompany(sender: AnyObject) {
+    func addCompany() {
         
         var newCompanyInformations = [String]()
         
@@ -51,20 +51,15 @@ class NewCompanyVC: UIViewController {
         
         CompaniesRetriever.sharedInstance.createNewCompany(newCompanyInformations)
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.performSegueWithIdentifier("unwindNewCompany", sender: self)
     }
     
-    @IBAction func cancelCreation(sender: AnyObject) {
-        
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
     
-    func addUIEleements(numberOfElements : Int){
+    func addUIElements(numberOfElements : Int){
         
+        self.scrollView = UIScrollView(frame: CGRectMake(0,0, self.view.frame.width, self.view.frame.height))
         
-        self.scrollView = UIScrollView(frame: CGRectMake(0, 64, self.view.frame.width, self.view.frame.height))
-        
-        self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + CGFloat(80 * numberOfElements+64)-self.view.frame.height)
+        self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + CGFloat(80 * numberOfElements)-self.view.frame.height)
         self.scrollView.showsVerticalScrollIndicator = true
         self.scrollView.scrollEnabled = true
         self.view.addSubview(self.scrollView)

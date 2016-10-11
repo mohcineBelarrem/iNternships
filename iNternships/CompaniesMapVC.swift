@@ -27,11 +27,48 @@ class CompaniesMapVC: UIViewController,MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         centerMapOnLocation(initialLocation)
         
         self.mapView.delegate = self
         
         self.annotations = [MKPointAnnotation]()
+        
+        
+        self.navigationItem.title = CompaniesRetriever.sharedInstance.getCurrentUser().name
+        
+        
+        let newCompanyButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addNewCompany))
+        self.navigationItem.rightBarButtonItem  = newCompanyButton
+        
+        
+        self.loadDataAndDrawPins()
+    }
+    
+    func addNewCompany() {
+        
+        print("before \(companiesList.count)")
+        self.performSegueWithIdentifier("showNewCompanyScene", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "showCompanyDetail" {
+            
+            let cdvc = segue.destinationViewController as! CompaniesDetailVC
+            cdvc.companyToDetail = CompaniesRetriever.sharedInstance.getCompanyByName(selectedAnnotation.title!) as! Company
+        }
+    }
+    
+    @IBAction func unwindWithNewData(segue:UIStoryboardSegue) {
+            print("returned \(companiesList.count)")
+            sleep(5)
+            self.loadDataAndDrawPins()
+            print("returned after sleep \(companiesList.count)")
+    }
+    
+    
+    func loadDataAndDrawPins() {
         
         self.companiesList = CompaniesRetriever.sharedInstance.getCompaniesList()
         
@@ -39,22 +76,6 @@ class CompaniesMapVC: UIViewController,MKMapViewDelegate {
         makeAnnotations()
         drawAnnotations()
         
-    }
-    
-    
-    @IBAction func cancel(sender: AnyObject) {
-    
-    self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-//        if segue.identifier == "" {
-//            
-//            let cdvc = segue.destinationViewController as! CompaniesDetailVC
-//            cdvc.companyToDetail = CompaniesRetriever.sharedInstance.getCompanyByName(selectedAnnotation.title!) as! Company
-//        }
     }
     
     
@@ -94,7 +115,7 @@ class CompaniesMapVC: UIViewController,MKMapViewDelegate {
     
     //MapView Methods
     func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,regionRadius * 1000.0, regionRadius * 1000.0)
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,regionRadius * 10000.0, regionRadius * 10000.0)
         self.mapView.setRegion(coordinateRegion, animated: true)
     }
     
@@ -117,7 +138,7 @@ class CompaniesMapVC: UIViewController,MKMapViewDelegate {
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if control == view.rightCalloutAccessoryView {
             selectedAnnotation = view.annotation as? MKPointAnnotation
-            //self.performSegueWithIdentifier("", sender: self)
+            self.performSegueWithIdentifier("showCompanyDetail", sender: self)
             // NSLog("Showing details....")
         }
     }

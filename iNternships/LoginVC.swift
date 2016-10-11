@@ -44,7 +44,7 @@ class LoginVC: UIViewController,UITextFieldDelegate {
             if answer {
                 
                 CompaniesRetriever.sharedInstance.password = password
-                self.performSegueWithIdentifier("showHomeScene", sender: self)
+                self.performSegueWithIdentifier("showMapScene", sender: self)
                 
             } else {
                 

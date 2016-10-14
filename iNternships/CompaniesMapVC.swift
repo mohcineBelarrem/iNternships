@@ -38,11 +38,27 @@ class CompaniesMapVC: UIViewController,MKMapViewDelegate {
         self.navigationItem.title = CompaniesRetriever.sharedInstance.getCurrentUser().name
         
         
-        let newCompanyButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addNewCompany))
+        let newCompanyButton = UIBarButtonItem(barButtonSystemItem: .Add,
+                                               target: self,
+                                               action: #selector(addNewCompany))
         self.navigationItem.rightBarButtonItem  = newCompanyButton
         
         
+        let disconnectButton = UIBarButtonItem(title: "Disconnect",
+                                               style: UIBarButtonItemStyle.Plain,
+                                               target: self,
+                                               action: #selector(disconnect))
+        
+        self.navigationItem.leftBarButtonItem  = disconnectButton
+        
+        
         self.loadDataAndDrawPins()
+    }
+    
+    func disconnect() {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        //TODO: disconnect the cookie
     }
     
     func addNewCompany() {

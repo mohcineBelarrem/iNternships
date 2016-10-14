@@ -61,6 +61,11 @@ class CompaniesRetriever {
         return self.directory.companiesList
     }
     
+    func getCompaniesTextComponents () -> [Int] {
+        
+        return directory.companiesTextComponents
+    }
+    
     
     func login(username : String, password : String ) -> Bool {
         

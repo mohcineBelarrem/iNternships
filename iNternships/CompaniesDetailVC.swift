@@ -12,12 +12,14 @@ class CompaniesDetailVC: UITableViewController {
     
     var companyToDetail : Company!
     var sectionsHeaders : [String]!
+    var companyTextComponents : [Int]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
        self.navigationItem.title = self.companyToDetail.name
        self.sectionsHeaders = CompaniesRetriever.sharedInstance.getHumanReadableCompanyComponents()
+       self.companyTextComponents = CompaniesRetriever.sharedInstance.getCompaniesTextComponents()
         
         print("\(companyToDetail.coordinates)")
     }
@@ -31,7 +33,7 @@ class CompaniesDetailVC: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.section == 3 || indexPath.section == 4 || indexPath.section == 12 {
+        if self.companyTextComponents.contains(indexPath.section) {
             return 100.0
         } else {
             return 44.0
@@ -46,7 +48,7 @@ class CompaniesDetailVC: UITableViewController {
      
         var cell : UITableViewCell
         
-        if indexPath.section == 3 || indexPath.section == 4 || indexPath.section == 12 {
+        if self.companyTextComponents.contains(indexPath.section) {
             
           cell = tableView.dequeueReusableCellWithIdentifier("companyDetailLargeCell", forIndexPath: indexPath)
           let textView =  cell.viewWithTag(101) as! UITextView

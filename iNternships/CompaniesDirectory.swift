@@ -17,6 +17,8 @@ class CompaniesDirectory {
     var companyComponents : [String]
     var humanReadableCompanyCompnents : [String]
     
+    var companiesTextComponents : [Int]!
+    
     var currentUser : User!
     
     
@@ -58,6 +60,8 @@ class CompaniesDirectory {
                                               "Salary",
                                               "Comments",
                                               "Coordinates"]
+        
+        self.companiesTextComponents = [1,3,4,13]
         
     }
     

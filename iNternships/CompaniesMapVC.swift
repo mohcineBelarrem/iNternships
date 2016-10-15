@@ -38,14 +38,14 @@ class CompaniesMapVC: UIViewController,MKMapViewDelegate {
         self.navigationItem.title = CompaniesRetriever.sharedInstance.getCurrentUser().name
         
         
-        let newCompanyButton = UIBarButtonItem(barButtonSystemItem: .Add,
+        let newCompanyButton = UIBarButtonItem(barButtonSystemItem: .add,
                                                target: self,
                                                action: #selector(addNewCompany))
         self.navigationItem.rightBarButtonItem  = newCompanyButton
         
         
         let disconnectButton = UIBarButtonItem(title: "Disconnect",
-                                               style: UIBarButtonItemStyle.Plain,
+                                               style: UIBarButtonItemStyle.plain,
                                                target: self,
                                                action: #selector(disconnect))
         
@@ -57,26 +57,26 @@ class CompaniesMapVC: UIViewController,MKMapViewDelegate {
     
     func disconnect() {
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         //TODO: disconnect the cookie
     }
     
     func addNewCompany() {
         
         print("before \(companiesList.count)")
-        self.performSegueWithIdentifier("showNewCompanyScene", sender: self)
+        self.performSegue(withIdentifier: "showNewCompanyScene", sender: self)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "showCompanyDetail" {
             
-            let cdvc = segue.destinationViewController as! CompaniesDetailVC
+            let cdvc = segue.destination as! CompaniesDetailVC
             cdvc.companyToDetail = CompaniesRetriever.sharedInstance.getCompanyByName(selectedAnnotation.title!) as! Company
         }
     }
     
-    @IBAction func unwindWithNewData(segue:UIStoryboardSegue) {
+    @IBAction func unwindWithNewData(_ segue:UIStoryboardSegue) {
             print("returned \(companiesList.count)")
             sleep(5)
             self.loadDataAndDrawPins()
@@ -102,7 +102,7 @@ class CompaniesMapVC: UIViewController,MKMapViewDelegate {
         for company in self.companiesList {
             
             let point = MKPointAnnotation()
-            let coordinates = company.coordinates.componentsSeparatedByString(",")
+            let coordinates = company.coordinates.components(separatedBy: ",")
             point.coordinate = CLLocationCoordinate2D(latitude: Double(coordinates[0])!, longitude: Double(coordinates[1])! )
             point.title = company.name
             self.annotations.append(point)
@@ -118,7 +118,7 @@ class CompaniesMapVC: UIViewController,MKMapViewDelegate {
             
             self.mapView.removeAnnotation(annotation)
         }
-        self.annotations.removeAll(keepCapacity: false)
+        self.annotations.removeAll(keepingCapacity: false)
     }
     
     func drawAnnotations() {
@@ -130,19 +130,19 @@ class CompaniesMapVC: UIViewController,MKMapViewDelegate {
     }
     
     //MapView Methods
-    func centerMapOnLocation(location: CLLocation) {
+    func centerMapOnLocation(_ location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,regionRadius * 10000.0, regionRadius * 10000.0)
         self.mapView.setRegion(coordinateRegion, animated: true)
     }
     
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
-        var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier("")
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "")
         
         if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "")
             annotationView!.canShowCallout = true
-            let btn = UIButton(type: .DetailDisclosure)
+            let btn = UIButton(type: .detailDisclosure)
             annotationView!.rightCalloutAccessoryView = btn
         } else {
             annotationView!.annotation = annotation
@@ -151,10 +151,10 @@ class CompaniesMapVC: UIViewController,MKMapViewDelegate {
         return annotationView
     }
     
-    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if control == view.rightCalloutAccessoryView {
             selectedAnnotation = view.annotation as? MKPointAnnotation
-            self.performSegueWithIdentifier("showCompanyDetail", sender: self)
+            self.performSegue(withIdentifier: "showCompanyDetail", sender: self)
             // NSLog("Showing details....")
         }
     }

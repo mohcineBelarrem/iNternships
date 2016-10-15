@@ -41,46 +41,46 @@ class AllCompaniesVC: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         self.tableView.reloadData()
         
-        let showMapButton = UIBarButtonItem(title: "Map", style: .Plain, target: self, action: #selector(showCompaniesMap))
+        let showMapButton = UIBarButtonItem(title: "Map", style: .plain, target: self, action: #selector(showCompaniesMap))
         self.navigationItem.rightBarButtonItem  = showMapButton
         
     }
     
     func showCompaniesMap() {
         
-        self.performSegueWithIdentifier("showCompaniesMapScene", sender: self)
+        self.performSegue(withIdentifier: "showCompaniesMapScene", sender: self)
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if self.resultSearchController.active {
+        if self.resultSearchController.isActive {
             return self.filtredCompaniesList.count
         } else {
             return self.companiesList.count
         }
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("companyCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "companyCell")
         
-        if self.resultSearchController.active {
-            cell!.textLabel!.text = self.filtredCompaniesList[indexPath.row].name
+        if self.resultSearchController.isActive {
+            cell!.textLabel!.text = self.filtredCompaniesList[(indexPath as NSIndexPath).row].name
         } else {
-            cell!.textLabel!.text = self.companiesList[indexPath.row].name
+            cell!.textLabel!.text = self.companiesList[(indexPath as NSIndexPath).row].name
         }
         return cell!
     }
     
     
     
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
+    func updateSearchResults(for searchController: UISearchController) {
         
-        self.filtredCompaniesList.removeAll(keepCapacity: false)
+        self.filtredCompaniesList.removeAll(keepingCapacity: false)
         
         self.filtredCompaniesList = self.companiesList.filter(
             
@@ -92,7 +92,7 @@ class AllCompaniesVC: UIViewController,UITableViewDataSource,UITableViewDelegate
                 let query = searchController.searchBar.text
                 
                 //closure return
-                let resultRange = ComparedCompany.description().rangeOfString(query!, options: NSStringCompareOptions.CaseInsensitiveSearch)
+                let resultRange = ComparedCompany.description().range(of: query!, options: NSString.CompareOptions.caseInsensitive)
                 
                 return  resultRange != nil
                 
@@ -102,25 +102,25 @@ class AllCompaniesVC: UIViewController,UITableViewDataSource,UITableViewDelegate
     }
     
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if self.resultSearchController.active {
-            self.companyToBeDetailled = self.filtredCompaniesList[indexPath.row]
+        if self.resultSearchController.isActive {
+            self.companyToBeDetailled = self.filtredCompaniesList[(indexPath as NSIndexPath).row]
         } else {
-             self.companyToBeDetailled = self.companiesList[indexPath.row]
+             self.companyToBeDetailled = self.companiesList[(indexPath as NSIndexPath).row]
         }
         
-        self.resultSearchController.active = false
+        self.resultSearchController.isActive = false
         
-        performSegueWithIdentifier("showCompanyDetail", sender: self)
+        performSegue(withIdentifier: "showCompanyDetail", sender: self)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         
         if segue.identifier == "showCompanyDetail" {
             
-            let cdvc = segue.destinationViewController as! CompaniesDetailVC
+            let cdvc = segue.destination as! CompaniesDetailVC
             cdvc.companyToDetail = self.companyToBeDetailled
         }
         

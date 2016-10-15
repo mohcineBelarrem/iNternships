@@ -16,18 +16,18 @@ class NewCompanyVC: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(NewCompanyVC.keyboardWillShow(_:)),
-                                                         name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(NewCompanyVC.keyboardWillHide(_:)),
-                                                         name: UIKeyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self,selector: #selector(NewCompanyVC.keyboardWillShow(_:)),
+                                                         name: NSNotification.Name.UIKeyboardWillShow,
+                                                         object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(NewCompanyVC.keyboardWillHide(_:)),
+                                                     name: NSNotification.Name.UIKeyboardWillHide,
+                                                     object: nil)
 
         
         self.humanReadableCompanyComponents = CompaniesRetriever.sharedInstance.getHumanReadableCompanyComponents()
         addUIElements(self.humanReadableCompanyComponents.count)
       
-        let addCompanyButton = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: #selector(addCompany))
+        let addCompanyButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addCompany))
         self.navigationItem.rightBarButtonItem  = addCompanyButton
     }
     
@@ -55,18 +55,18 @@ class NewCompanyVC: UIViewController,UITextFieldDelegate {
         
         CompaniesRetriever.sharedInstance.createNewCompany(newCompanyInformations)
         
-        self.performSegueWithIdentifier("unwindNewCompany", sender: self)
+        self.performSegue(withIdentifier: "unwindNewCompany", sender: self)
     }
     
     
-    func addUIElements(numberOfElements : Int){
+    func addUIElements(_ numberOfElements : Int){
         
-        self.scrollView = UIScrollView(frame: CGRectMake(0,0, self.view.frame.width, self.view.frame.height))
+        self.scrollView = UIScrollView(frame: CGRect(x: 0,y: 0, width: self.view.frame.width, height: self.view.frame.height))
         
         self.scrollView.contentSize = CGSize(width: self.view.frame.width,
                                              height: self.view.frame.height + CGFloat(80 * numberOfElements)-self.view.frame.height)
         self.scrollView.showsVerticalScrollIndicator = true
-        self.scrollView.scrollEnabled = true
+        self.scrollView.isScrollEnabled = true
         //self.scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.OnDrag
         self.view.addSubview(self.scrollView)
         
@@ -84,13 +84,13 @@ class NewCompanyVC: UIViewController,UITextFieldDelegate {
             textField.tag = 200+i
             textField.font = UIFont(name: "Futura", size: 16)
             textField.textColor = UIColor(red: CGFloat(0), green: CGFloat(150/255.0), blue: CGFloat(1.0), alpha: CGFloat(1.0))
-            textField.clearButtonMode = UITextFieldViewMode.WhileEditing
+            textField.clearButtonMode = UITextFieldViewMode.whileEditing
             textField.delegate = self
             
             if i <= numberOfElements - 2 {
-            textField.returnKeyType = UIReturnKeyType.Next
+            textField.returnKeyType = UIReturnKeyType.next
             } else {
-                textField.returnKeyType = UIReturnKeyType.Done
+                textField.returnKeyType = UIReturnKeyType.done
             }
                 
             container.addSubview(label)
@@ -99,7 +99,7 @@ class NewCompanyVC: UIViewController,UITextFieldDelegate {
         }
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
        let max = 200 + self.humanReadableCompanyComponents.count - 1
         
@@ -114,14 +114,14 @@ class NewCompanyVC: UIViewController,UITextFieldDelegate {
         return false
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.scrollView.endEditing(true)
     }
     
     
-    func keyboardWillShow(notification: NSNotification) {
+    func keyboardWillShow(_ notification: Notification) {
         
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+        if let keyboardSize = ((notification as NSNotification).userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             
         let numberOfElements =  self.humanReadableCompanyComponents.count
             
@@ -132,7 +132,7 @@ class NewCompanyVC: UIViewController,UITextFieldDelegate {
         
     }
     
-    func keyboardWillHide(notification: NSNotification) {
+    func keyboardWillHide(_ notification: Notification) {
        
         let numberOfElements =  self.humanReadableCompanyComponents.count
         

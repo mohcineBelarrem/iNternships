@@ -14,11 +14,11 @@ class CompaniesRetriever {
     
     static let sharedInstance = CompaniesRetriever()
     
-    var password : String!
+    //var password : String!
     
-    private var directory : CompaniesDirectory
+    fileprivate var directory : CompaniesDirectory
     
-    private init() {
+    fileprivate init() {
         //NSLog("Contacting Server...")
         self.directory = CompaniesDirectory()
     }
@@ -33,7 +33,7 @@ class CompaniesRetriever {
         return self.directory.humanReadableCompanyCompnents
     }
     
-    func getCompanyByName(name : String) -> AnyObject {
+    func getCompanyByName(_ name : String) -> AnyObject {
         
         for company in directory.companiesList {
             
@@ -43,7 +43,7 @@ class CompaniesRetriever {
             }
         }
         
-        return false
+        return false as AnyObject
     }
     
     
@@ -67,16 +67,16 @@ class CompaniesRetriever {
     }
     
     
-    func login(username : String, password : String ) -> Bool {
+    func login(_ username : String, password : String ) -> Bool {
         
         do {
-            let url = NSURL(string: "http://testarea.belarrem.com/login.php?username=\(username)&password=\(password)")
+            let url = URL(string: "http://testarea.belarrem.com/login.php?username=\(username)&password=\(password)")
             
             //TODO: must examine for spec chars
             
-            let data = NSData(contentsOfURL: url!)
+            let data = try? Data(contentsOf: url!)
             
-            let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+            let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
             
             let response = json["response"] as! String
             
@@ -107,11 +107,11 @@ class CompaniesRetriever {
         self.directory.companiesList = []
        
         do {
-            let url = NSURL(string: "http://testarea.belarrem.com/companies.php?id=\(directory.currentUser.id)&password=\(directory.currentUser.password)")
+            let url = URL(string: "http://testarea.belarrem.com/companies.php?id=\(directory.currentUser.id)&password=\(directory.currentUser.password)")
             
-            let data = NSData(contentsOfURL: url!)
+            let data = try? Data(contentsOf: url!)
             
-            let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+            let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary
             
             let response = json["response"] as! String
             
@@ -135,19 +135,20 @@ class CompaniesRetriever {
 
     }
     
-    func createNewCompany(companyInformations : [String]){
+    func createNewCompany(_ companyInformations : [String]){
         
-        let myUrl = NSURL(string: "http://testarea.belarrem.com/newcompany.php?password=\(password)");
         
-        let request = NSMutableURLRequest(URL:myUrl!)
+        let myURL = URL.init(string: "http://testarea.belarrem.com/newcompany.php?password=\(directory.currentUser.password)")
         
-        request.HTTPMethod = "POST"// Compose a query string
+        var request = URLRequest(url:myURL!)
+        
+        request.httpMethod = "POST"// Compose a query string
         
         let postString = createPostString(companyInformations);
         
-        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        request.httpBody = postString.data(using: String.Encoding.utf8)
         
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data: NSData?, response: NSURLResponse?, error: NSError?) in
+        let task = URLSession.shared.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) in
             
             if error != nil
             {
@@ -160,7 +161,7 @@ class CompaniesRetriever {
             
             //Let's convert response sent from a server side script to a NSDictionary object:
             do {
-                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
+                let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
                 
                 if let parseJSON = json {
                     
@@ -172,11 +173,12 @@ class CompaniesRetriever {
             } catch {
                 print(error)
             }
-        }
+        }) 
         task.resume()
+ 
     }
     
-    func createPostString (companyInformations : [String]) -> String {
+    func createPostString (_ companyInformations : [String]) -> String {
         
         var postString = "user_id=\(directory.currentUser.id)&\(directory.companyComponents[0])=\(companyInformations[0])&"
         

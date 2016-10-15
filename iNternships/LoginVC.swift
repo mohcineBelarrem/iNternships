@@ -23,7 +23,7 @@ class LoginVC: UIViewController,UITextFieldDelegate {
     }
     
     
-    @IBAction func login(sender: AnyObject) {
+    @IBAction func login(_ sender: AnyObject) {
         
         let username = self.usernameTextField.text!
         let password = self.passwordTextField.text!
@@ -43,8 +43,7 @@ class LoginVC: UIViewController,UITextFieldDelegate {
             
             if answer {
                 
-                CompaniesRetriever.sharedInstance.password = password
-                self.performSegueWithIdentifier("showMapScene", sender: self)
+                self.performSegue(withIdentifier: "showMapScene", sender: self)
                 
             } else {
                 
@@ -60,12 +59,12 @@ class LoginVC: UIViewController,UITextFieldDelegate {
     }
     
     //Methods to dismiss keyboard when finished with it
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
 
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //Resiging first responder when textfield hits return
         textField.resignFirstResponder()
         return false

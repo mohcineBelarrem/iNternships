@@ -24,41 +24,41 @@ class CompaniesDetailVC: UITableViewController {
         print("\(companyToDetail.coordinates)")
     }
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return self.sectionsHeaders.count
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if self.companyTextComponents.contains(indexPath.section) {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if self.companyTextComponents.contains((indexPath as NSIndexPath).section) {
             return 100.0
         } else {
             return 44.0
         }
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.sectionsHeaders[section]
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      
         var cell : UITableViewCell
         
-        if self.companyTextComponents.contains(indexPath.section) {
+        if self.companyTextComponents.contains((indexPath as NSIndexPath).section) {
             
-          cell = tableView.dequeueReusableCellWithIdentifier("companyDetailLargeCell", forIndexPath: indexPath)
+          cell = tableView.dequeueReusableCell(withIdentifier: "companyDetailLargeCell", for: indexPath)
           let textView =  cell.viewWithTag(101) as! UITextView
-           textView.text = self.companyToDetail.toArray()[indexPath.section]
+           textView.text = self.companyToDetail.toArray()[(indexPath as NSIndexPath).section]
             
         } else {
             
-            cell = tableView.dequeueReusableCellWithIdentifier("companyDetailSmallCell", forIndexPath: indexPath)
+            cell = tableView.dequeueReusableCell(withIdentifier: "companyDetailSmallCell", for: indexPath)
             let label = cell.viewWithTag(102) as! UILabel
-            label.text = self.companyToDetail.toArray()[indexPath.section]
+            label.text = self.companyToDetail.toArray()[(indexPath as NSIndexPath).section]
         }
         
         return cell
